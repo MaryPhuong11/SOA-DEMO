@@ -11,20 +11,14 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/users/**
-          filters:
-            - StripPrefix=1
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/api/products/**
-          filters:
-            - StripPrefix=1
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
-          filters:
-            - StripPrefix=1
       discovery:
         locator:
           enabled: true
@@ -47,6 +41,7 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     com.soa.gateway: INFO
+
 
 
 
